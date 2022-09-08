@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DATAFLUX</title>
+</head>
+<body>
+    <h1>Simule aqui</h1>
+    Inserir <b>Supermercado,Hipermercado,Atacado:</b> <input id="ipt_comercio" type="text" placeholder="Ex:Supermercado" > 
+    <br>
+    <br>
+    Inserir valor de <b>faturamento:</b> <input id="ipt_faturamento" type="text" placeholder="Ex:2000000" >
+    <br>
+    <br>
+    <button onclick="calculo()" >Veja aqui</button>
+    <br>
+    <br>
+    <div id="div_msg" ></div>
+</body>
+</html>
+<script>
+function calculo() {
+        var faturamento = Number(ipt_faturamento.value) 
+        
+        var diferençaS = faturamento * 0.08;
+        var diferençaH = faturamento * 0.11;
+        var diferençaA = faturamento * 0.13;
+        
+        var fatuSuper = faturamento * 1.08;
+        var fatuHiper = faturamento * 1.11;
+        var fatuAtaca = faturamento * 1.13;
+
+        var comercio = ipt_comercio.value;
+
+        if (comercio == 'Supermercado') {
+            div_msg.innerHTML = `O seu <u><b>faturamento</b></u> com <b>DataFlux</b> poderá chegar até <b>R$${fatuSuper.toFixed(2)}</b>
+        <br><br>`
+        div_msg.innerHTML += `É uma diferença de <b>R$${diferençaS.toFixed(2)}</b>
+        <br><br>`
+        div_msg.innerHTML += `Com o auxilio do Dataflux, zonas de intensa movimentação serão detectadas e melhor administradas, resultando
+         em aumentos potenciais de até <b>8% no faturamento de locações para seu supermercado</b>.`
+        }   
+       
+        if (comercio == 'Hipermercado') {
+            div_msg.innerHTML = `O seu <u><b>faturamento</b></u> com <b>DataFlux</b> poderá chegar até <b>R$${fatuHiper.toFixed(2)}</b>
+        <br><br>`
+        div_msg.innerHTML += `É uma diferença de <b>R$${diferençaH.toFixed(2)}</b>
+        <br><br>`
+        div_msg.innerHTML += `Com o auxilio do Dataflux, zonas de intensa movimentação serão detectadas e melhor administradas, resultando
+         em aumentos potenciais de até <b>11% no faturamento de locações para seu hipermercado</b>.`
+        }
+       
+        if (comercio == 'Atacado') {
+            div_msg.innerHTML = `O seu <u><b>faturamento</b></u> com <b>DataFlux</b> poderá chegar até <b>R$${fatuAtaca.toFixed(2)}</b>
+        <br><br>`
+        div_msg.innerHTML += `É uma diferença de <b>R$${diferençaA.toFixed(2)}</b>
+        <br><br>`
+        div_msg.innerHTML += `Com o auxilio do Dataflux, zonas de intensa movimentação serão detectadas e melhor administradas, resultando
+         em aumentos potenciais de até <b>13% no faturamento de locações para seu atacado</b>.`
+        }
+}
+</script>
