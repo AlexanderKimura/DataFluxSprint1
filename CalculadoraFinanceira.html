@@ -23,7 +23,8 @@
 <script>
 function calculo() {
         var faturamento = Number(ipt_faturamento.value) 
-        
+        var comercio = ipt_comercio.value;
+
         var diferençaS = faturamento * 0.08;
         var diferençaH = faturamento * 0.11;
         var diferençaA = faturamento * 0.13;
@@ -32,8 +33,7 @@ function calculo() {
         var fatuHiper = faturamento * 1.11;
         var fatuAtaca = faturamento * 1.13;
 
-        var comercio = ipt_comercio.value;
-
+        
         if (comercio == 'Supermercado') {
             div_msg.innerHTML = `O seu <u><b>faturamento</b></u> com <b>DataFlux</b> poderá chegar até <b>R$${fatuSuper.toFixed(2)}</b>
         <br><br>`
